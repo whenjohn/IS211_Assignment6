@@ -5,18 +5,46 @@
 import numbers
 
 #Define exceptions
-class NotFoatError(Exception): pass
+class NotNumError(Exception): pass
 
 
-def convertCelsiusToKelvin(celsius):
+def convertCelsiusToKelvin(temperature):
     """convert Celsius to Kelvin"""
-    if not isinstance(celsius, numbers.Number) or isinstance(celsius, bool):
-        raise NotFoatError, "non−float entered"
-    return round((celsius + 273.15), 2)
+    if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+        raise NotNumError, "non−float entered"
+    return round((temperature + 273.15), 2)
 
 
-def convertCelsiusToFahrenheit(celsius):
+def convertCelsiusToFahrenheit(temperature):
     """convert Celsius to Fahrenheit"""
-    if not isinstance(celsius, numbers.Number) or isinstance(celsius, bool):
-        raise NotFoatError, "non−float entered"
-    return round((celsius * 1.8 + 32), 2)
+    if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+        raise NotNumError, "non−float entered"
+    return round((temperature * 1.8 + 32), 2)
+
+
+def convertFahrenheitToCelsius(temperature):
+    """convert Fahrenheit to Celsius"""
+    if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+        raise NotNumError, "non−float entered"
+    return round(((temperature - 32) * 0.555555555555556), 2)
+
+
+def convertFahrenheitToKelvin(temperature):
+    """convert Fahrenheit to Kelvin"""
+    if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+        raise NotNumError, "non−float entered"
+    return round(((temperature + 459.67) * 0.555555555555556), 2)
+
+
+def convertKelvinToCelsius(temperature):
+    """convert Kelvin to Celsius"""
+    if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+        raise NotNumError, "non−float entered"
+    return round((temperature - 273.15), 2)
+
+
+def convertKelvinToFahrenheit(temperature):
+        """convert Kelvin to Fahrenheit"""
+        if not isinstance(temperature, numbers.Number) or isinstance(temperature, bool):
+            raise NotNumError, "non−float entered"
+        return round((temperature * 1.8 - 459.67), 2)

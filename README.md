@@ -4,12 +4,23 @@
 python tests.py -v
 
 # How to test functions
-python -i conversions.py
+python -i conversions_refactored.py
 
-convertCelsiusToKelvin(500.00)
-773.15
 
-convertCelsiusToFahrenheit(500.00)
-932.00
+execute convert(fromUnit,toUnit,value)
+fromUnit is the conversion type incoming
+toUnit is the type outputting
+value is the fromUnit value to be converted
 
-You must enter a number. Strings, symbols, and bool will throw an error
+Supported types:
+celsius',
+kelvin
+fahrenheit
+meter
+yard
+mile
+
+Tempurture cannot be converted to distance and vis-versa
+
+
+Value must enter a number. Strings, symbols, and bool will throw an error
